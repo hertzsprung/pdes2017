@@ -1,5 +1,15 @@
+\documentclass[times]{elsarticle}
+\usepackage{fullpage}
+\usepackage[final,babel]{microtype}
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage{csquotes}
+\usepackage[T1]{fontenc}
+
+\begin{document}
 Representing terrain in atmospheric models creates mesh distortions that increase advection errors and pressure gradient errors.  Finer meshes are able to resolve steep slopes that result in larger distortions and increased numerical errors.  Smoothing terrain-following coordinates can help to reduce distortions, and the cut cell method reduces distortions even further, but creates arbitrarily small cut cells that can severely constrain the time-step for explicit methods.  Regardless of the mesh type, distortions can only be reduced, not eliminated.
 
 We present two new methods that improve the accuracy of flows over steep terrain on arbitrarily-structured meshes.  First, the slanted cell mesh is a new method that avoids additional time-step constraints by creating cells that are long in the direction parallel to the lower boundary.  Second, we describe a new method-of-lines advection scheme that uses constraints derived from a von Neumann analysis to ensure numerical stability on severely distorted meshes.
 
 The method-of-lines advection scheme is assessed using a new test case in which a tracer placed at the ground is transported over steep mountains.  We find that the scheme is largely insensitive to the type of mesh and steepness of the mountains.  We also demonstrate that the scheme is second-order convergent irrespective of mesh distortions.  Incorporating the new advection scheme into a dynamical core we show that, compared to terrain-following and cut cell meshes, the slanted cell mesh reduces pressure gradient errors.
+\end{document}
