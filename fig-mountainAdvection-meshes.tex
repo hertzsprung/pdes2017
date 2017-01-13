@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage[paperwidth=6.1in,paperheight=3.8in,margin=0in]{geometry}
+\usepackage{mathptmx}%{times}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{color}
+
+\setlength{\parindent}{0pt}
+\begin{document}
+\TPMargin{2pt}
+\textblockcolour{white}
+\begin{textblock}{2}(2,0.5)
+\normalsize
+Cut cells
+\end{textblock}
+\begin{textblock}{2.5}(2,6.5)
+\normalsize
+Slanted cells
+\end{textblock}
+\begin{center}
+\includegraphics{../mountainAdvection-cutCell-5000-linearUpwind-1000/constant/meshW.pdf} \\
+\hspace*{0.8em}\includegraphics{../mountainAdvection-slantedCell-5000-linearUpwind-1000/constant/mesh.pdf}
+\end{center}
+Two-dimensional meshes on a $x$--$z$ plane.  An idealised wave-shaped mountain with the standard cut cell method and the new slanted cell method.  The cut cell mesh has extremely small cells that can severely constrain the time-step for explicit methods, but the slanted cell mesh has cells that are long in the direction parallel to the lower boundary.
+\end{document}

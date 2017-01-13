@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage[paperwidth=6.5in,paperheight=5in,margin=0in]{geometry}
+\usepackage{mathptmx}%{times}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{color}
+
+\setlength{\parindent}{0pt}
+\begin{document}
+\TPMargin{1pt}
+\begin{textblock}{4}(1.2,0.5)
+\normalsize
+BTF linearUpwind \\
+\hspace*{1.4em}$\ell_2 = \num{0.0477}$
+\hspace*{1em}$\ell_\infty = \num{0.0462}$
+\end{textblock}
+\begin{textblock}{4}(6.3,0.5)
+\normalsize
+Cut cell linearUpwind \\
+\hspace*{1.4em}$\ell_2 = \num{0.109}$
+\hspace*{1em}$\ell_\infty = \num{0.133}$
+\end{textblock}
+\begin{textblock}{4}(11.4,0.5)
+\normalsize
+Slanted cell linearUpwind \\
+\hspace*{1.4em}$\ell_2 = \num{0.108}$
+\hspace*{1em}$\ell_\infty = \num{0.518}$
+\end{textblock}
+\begin{textblock}{4}(1.2,5.5)
+\normalsize
+BTF cubicFit \\
+\hspace*{1.4em}$\ell_2 = \num{0.0367}$
+\hspace*{1em}$\ell_\infty = \num{0.0310}$
+\end{textblock}
+\begin{textblock}{4}(6.3,5.5)
+\normalsize
+Cut cell cubicFit \\
+\hspace*{1.4em}$\ell_2 = \num{0.0512}$
+\hspace*{1em}$\ell_\infty = \num{0.0673}$
+\end{textblock}
+\begin{textblock}{4}(11.4,5.5)
+\normalsize
+Slanted cell cubicFit \\
+\hspace*{1.4em}$\ell_2 = \num{0.0523}$
+\hspace*{1em}$\ell_\infty = \num{0.0688}$
+\end{textblock}
+\begin{center}
+\includegraphics{../mountainAdvection-btf-5000-linearUpwind-1000/10000/errorContoursW.pdf}
+\hspace*{0.26em}
+\includegraphics{../mountainAdvection-cutCell-5000-linearUpwind-1000/10000/errorContours.pdf}
+\hspace*{0.26em}
+\includegraphics{../mountainAdvection-slantedCell-5000-linearUpwind-1000/10000/errorContours.pdf} \\
+\includegraphics{../mountainAdvection-btf-5000-cubicUpwind-1000/10000/errorContoursSW.pdf}
+\includegraphics{../mountainAdvection-cutCell-5000-cubicUpwind-1000/10000/errorContoursS.pdf}
+\includegraphics{../mountainAdvection-slantedCell-5000-cubicUpwind-1000/10000/errorContoursS.pdf} \\
+\includegraphics[height=5.5in,angle=270]{mountainAdvectionErrorLegend.eps}
+\end{center}
+\hspace*{0.5em}
+
+A newly-formulated two-dimensional test on an $x$--$z$ plane in which a tracer placed at the ground is transported over steep wave-shaped mountains.  Tracer contours at the end of integration are presented on basic terrain-following (BTF), cut cell and slanted cell meshes using a standard multi-dimensional linear upwind scheme, and our new method-of-lines transport scheme, called `cubicFit'.
+The numerical solutions are marked by solid black lines.  The analytic solution is marked by dotted lines.  Contours are every \SI{0.1}{\kilo\gram\per\meter\cubed}.  Normalised $\ell_2$ and $\ell_\infty$ error norms are calculated in the usual way.
+\end{document}
